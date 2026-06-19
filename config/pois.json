@@ -1,0 +1,35 @@
+{
+  "pois": [
+    {
+      "id": "Spawn",
+      "x": 0,
+      "y": 64,
+      "z": 0,
+      "name": "Spawn"
+    },
+    {
+      "id": "Base",
+      "x": 100,
+      "y": 64,
+      "z": 200,
+      "name": "Main Base"
+    },
+    {
+      "id": "Mine",
+      "x": -300,
+      "y": 12,
+      "z": 150,
+      "name": "Mine Entrance",
+      "description": "Strip mine at y=12"
+    }
+  ],
+  "groups": [
+    {
+      "id": "POI",
+      "name": "Locations",
+      "icon": "markers/marker_town.png",
+      "checked": true,
+      "match_all": true
+    }
+  ]
+}

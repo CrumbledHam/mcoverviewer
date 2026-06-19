@@ -68,7 +68,16 @@ The pack is validated for the presence of key 1.21 assets before use. If validat
 
 ## POI markers
 
-Mount a file to `/config/pois.py` containing standard Overviewer `markers` / `filter` config. It is appended to the generated config at render time. Only `--genpoi --skip-scan --skip-players` is used to avoid bugs with older world formats.
+Example `pois.py` and `pois.json` files are included in `config/`. Copy the `config/` directory alongside your `docker-compose.yml` and mount it:
+
+```yaml
+volumes:
+  - ./config:/config
+```
+
+Edit `pois.json` to add locations — coordinates are in Minecraft block coordinates (x, y, z). `pois.py` is the Overviewer config snippet that reads the JSON and wires up the markers; you only need to edit it if you want custom marker groups or icons.
+
+`pois.py` is appended to the generated Overviewer config at render time. Marker generation uses `--genpoi --skip-scan --skip-players` to avoid bugs with older world formats and keep it fast.
 
 ## Render logic
 
