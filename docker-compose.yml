@@ -6,7 +6,7 @@ services:
     environment:
       WORLD_PATH: /world
       OUTPUT_DIR: /output
-      MAP_NAME: journey
+      MAP_NAME: world
       MAX_ZOOM: "16"
       MAP_SIZE: "20000"       # square crop radius in blocks centred on 0,0 (0 = no crop)
       UPDATE_INTERVAL: "60"   # minutes between forced re-renders when idle

@@ -32,7 +32,7 @@ The default compose file builds the image locally from the bundled `Dockerfile`.
 |---|---|---|
 | `WORLD_PATH` | `/world` | Path to the Minecraft world directory (inside the container) |
 | `OUTPUT_DIR` | `/output` | Root output directory; tiles are written to `$OUTPUT_DIR/$MAP_NAME` |
-| `MAP_NAME` | `journey` | Sub-directory name used for output and the Overviewer world key |
+| `MAP_NAME` | `world` | Sub-directory name used for output and the Overviewer world/render key |
 | `MAX_ZOOM` | `8` | Maximum zoom level for all renders |
 | `MAP_SIZE` | `0` | Square crop radius in blocks centred on 0,0. `0` = no crop |
 | `UPDATE_INTERVAL` | `60` | Re-render even when idle, after this many **minutes**. `0` = only render on player activity |

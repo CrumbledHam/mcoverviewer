@@ -8,7 +8,7 @@ set -euo pipefail
 # ── Configuration (all overridable via environment) ──────────────────────────
 WORLD_PATH="${WORLD_PATH:-/world}"
 OUTPUT_DIR="${OUTPUT_DIR:-/output}"
-MAP_NAME="${MAP_NAME:-journey}"
+MAP_NAME="${MAP_NAME:-world}"
 TEXTURE_PATH="${TEXTURE_PATH:-}"
 UPDATE_INTERVAL="${UPDATE_INTERVAL:-60}"   # minutes between forced re-renders (0 = disabled)
 CHECK_INTERVAL="${CHECK_INTERVAL:-60}"     # seconds between change-detection polls
@@ -138,29 +138,29 @@ if [[ "$MAP_SIZE" =~ ^[0-9]+$ ]] && [ "$MAP_SIZE" -gt 0 ]; then
 fi
 
 cat >"$CONFIG_FILE" <<EOF
-worlds["journey"] = "$WORLD_PATH"
+worlds["$MAP_NAME"] = "$WORLD_PATH"
 
-renders["journey_render"] = {
-  "world": "journey",
-  "title": "Journey (Overworld)",
+renders["${MAP_NAME}_overworld"] = {
+  "world": "$MAP_NAME",
+  "title": "$MAP_NAME (Overworld)",
   "rendermode": "normal",
   "dimension": "overworld",
 ${CROP_CONFIG_LINE}
   "maxzoom": $MAX_ZOOM,
 }
 
-renders["journey_nether"] = {
-  "world": "journey",
-  "title": "Journey (Nether)",
+renders["${MAP_NAME}_nether"] = {
+  "world": "$MAP_NAME",
+  "title": "$MAP_NAME (Nether)",
   "rendermode": "nether",
   "dimension": "nether",
 ${CROP_CONFIG_LINE}
   "maxzoom": $MAX_ZOOM,
 }
 
-renders["journey_end"] = {
-  "world": "journey",
-  "title": "Journey (The End)",
+renders["${MAP_NAME}_end"] = {
+  "world": "$MAP_NAME",
+  "title": "$MAP_NAME (The End)",
   "rendermode": "normal",
   "dimension": "end",
 ${CROP_CONFIG_LINE}
