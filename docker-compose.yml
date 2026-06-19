@@ -1,0 +1,23 @@
+services:
+  overviewer:
+    build: .
+    container_name: overviewer
+    restart: unless-stopped
+    environment:
+      WORLD_PATH: /world
+      OUTPUT_DIR: /output
+      MAP_NAME: journey
+      MAX_ZOOM: "16"
+      MAP_SIZE: "20000"       # square crop radius in blocks centred on 0,0 (0 = no crop)
+      UPDATE_INTERVAL: "60"   # minutes between forced re-renders when idle
+      CHECK_INTERVAL: "60"    # seconds between change-detection polls
+      WEB_PORT: "8080"
+      # TEXTURE_PATH: /textures/my-pack   # optional: dir, jar, zip, or URL
+      # POI_CONFIG_PATH: /config/pois.py  # optional: Overviewer POI snippet
+    volumes:
+      - ./world:/world:ro      # Minecraft world directory
+      - ./output:/output       # rendered map tiles
+      - ./textures:/textures   # optional texture packs
+      - ./config:/config       # optional pois.py
+    ports:
+      - "8080:8080"
