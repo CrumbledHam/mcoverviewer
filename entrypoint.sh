@@ -191,12 +191,6 @@ if [ -n "$EFFECTIVE_TEXTURE_PATH" ]; then
 fi
 echo "Using generated config at $CONFIG_FILE"
 
-# ── HTTP server ───────────────────────────────────────────────────────────────
-# Serve the output directory so the map is browsable immediately.
-# Runs in the background; the render loop is the foreground process.
-echo "Starting web server on port $WEB_PORT serving $OUT_DIR"
-( cd "$OUT_DIR" && python3 -m http.server "$WEB_PORT" ) &
-
 # ── Render loop ───────────────────────────────────────────────────────────────
 # Triggers a render when:
 #   1. No render has ever run (first start)
