@@ -29,6 +29,4 @@ RUN chmod +x /usr/local/bin/overviewer-render
 # /output — rendered map tiles and HTML
 VOLUME ["/world", "/output"]
 
-EXPOSE 8080
-
 ENTRYPOINT ["/usr/local/bin/overviewer-render"]
