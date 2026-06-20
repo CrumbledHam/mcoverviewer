@@ -19,5 +19,3 @@ services:
       - ./output:/output       # rendered map tiles
       - ./textures:/textures   # optional texture packs
       - ./config:/config       # optional pois.py
-    ports:
-      - "8080:8080"
